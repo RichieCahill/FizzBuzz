@@ -3,15 +3,26 @@
 
 using namespace std;
 
+typedef uint64_t u64;
+typedef uint32_t u32;
+typedef uint16_t u16;
+typedef uint8_t u8;
+
+typedef int64_t i64;
+typedef int32_t i32;
+typedef int16_t i16;
+typedef int8_t i8;
+
+
 // This caculates the if in is a multipule of num and then adds word to output
-void modulo(int64_t in, int64_t num, string word, string& output) {
+void modulo(u64 in, u64 num, string word, string& output) {
 	if (in % num == 0)
 		output += word;
 }
 
 // This loops from 1 to n printing output or num if output is empty
-void fizzbuzz(uint64_t n) {
-	for (int64_t i = 1; i <= n ; i++){
+void fizzbuzz(u64 n) {
+	for (u64 i = 1; i <= n ; i++){
 		char num[19];
 		string output;
 		
@@ -28,6 +39,6 @@ void fizzbuzz(uint64_t n) {
 }
 
 int main() {
-	fizzbuzz(25);
+	fizzbuzz(1000);
 	return 0;
 }
