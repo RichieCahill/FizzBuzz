@@ -29,7 +29,7 @@ void fizzbuzz(u64 n) {
 		modulo(i, 3, "Fizz ", output);
 		modulo(i, 5, "Buzz ", output);
 
-		if (output == "") {
+		if (output.size() == 0) {
 				sprintf(num, "%d", i);
 				output = num;
 		}
