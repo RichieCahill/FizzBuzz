@@ -1,44 +1,44 @@
+#include <cstdint>
 #include <iostream>
 #include <string>
 
-using namespace std;
+using std::cout;
+using std::string;
+using std::to_string;
 
-typedef uint64_t u64;
-typedef uint32_t u32;
-typedef uint16_t u16;
-typedef uint8_t u8;
+typedef std::uint64_t u64;
+typedef std::uint32_t u32;
+typedef std::uint16_t u16;
+typedef std::uint8_t u8;
 
-typedef int64_t i64;
-typedef int32_t i32;
-typedef int16_t i16;
-typedef int8_t i8;
-
-
-// This caculates the if in is a multipule of num and then adds word to output
-void modulo(u64 in, u64 num, string word, string& output) {
-	if (in % num == 0)
-		output += word;
-}
+typedef std::int64_t i64;
+typedef std::int32_t i32;
+typedef std::int16_t i16;
+typedef std::int8_t i8;
 
 // This loops from 1 to n printing output or num if output is empty
-void fizzbuzz(u64 n) {
-	for (u64 i = 1; i <= n ; i++){
-		char num[19];
-		string output;
-		
-		modulo(i, 3, "Fizz ", output);
-		modulo(i, 5, "Buzz ", output);
+auto fizzbuzz_up_to_n(const u64 n) {
+  // reusable empty string
+  // reserves enough characters for FizzBuzz
+  auto output = string();
+  output.reserve(8);
 
-		if (output.size() == 0) {
-				sprintf(num, "%d", i);
-				output = num;
-		}
-		
-		cout << output << endl;
-		}
+  for (u64 i = 1; i <= n; i++) {
+    if (i % 3 == 0) {
+      output += "Fizz";
+    }
+    if (i % 5 == 0) {
+      output += "Buzz";
+    }
+    if (output.empty()) {
+      output += to_string(i);
+    }
+    cout << output << "\n";
+    output.clear();
+  }
 }
 
-int main() {
-	fizzbuzz(1000);
-	return 0;
+auto main() -> int {
+  fizzbuzz_up_to_n(1000);
+  return 0;
 }
