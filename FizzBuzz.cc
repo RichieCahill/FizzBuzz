@@ -23,7 +23,7 @@ auto fizzbuzz_up_to_n(const u64 n) {
   auto output = string();
   output.reserve(8);
 
-  for (auto i = 1; i <= n; i++) {
+  for (auto i = 1; i <= n; i += 1) {
     if (i % 3 == 0) {
       output += "Fizz";
     }
