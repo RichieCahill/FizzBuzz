@@ -7,6 +7,7 @@ FizzBuzz ins all the languages
 - CPP
 - Bash
 - Rust
-- Pythion
+- Python
 - HTML/CSS
 - JavaScript
+- GO
